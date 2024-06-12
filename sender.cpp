@@ -139,7 +139,7 @@ unsigned long sendFile(const char* fileName)
  		 */
 		sndMsg.mtype = SENDER_DATA_TYPE;
 		if (msgsnd(msqid, &sndMsg, sizeof(sndMsg) - sizeof(long), 0) == -1) {
-			perror("msgsnd")
+			perror("msgsnd");
 			exit(-1);
 		}
 
