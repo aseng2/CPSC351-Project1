@@ -125,7 +125,9 @@ unsigned long mainLoop(const char* fileName)
 		 * <ORIGINAL FILENAME__recv>. For example, if the name of the original
 		 * file is song.mp3, the name of the received file is going to be song.mp3__recv.
 		 */
-		message recvMSg;
+		message recvMsg;
+		
+		msgSize = recvMsg.size;
 		/* If the sender is not telling us that we are done, then get to work */
 		if(msgSize != 0)
 		{
