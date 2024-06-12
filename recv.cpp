@@ -75,7 +75,7 @@ void init(int& shmid, int& msqid, void*& sharedMemPtr)
 	/* TODO: Create a message queue */
 	msqid = msgget(key, S_IRUSR | S_IWUSR | IPC_CREAT);
 	/* TODO: Store the IDs and the pointer to the shared memory region in the corresponding parameters */
-	sprintf(shmid, shmid, msqid, sharedMemPtr);
+	//sprintf(shmid, shmid, msqid, sharedMemPtr);
 }
  
 
