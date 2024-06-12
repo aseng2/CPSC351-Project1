@@ -31,7 +31,7 @@ string recvFileName()
 	/* TODO: declare an instance of the fileNameMsg struct to be
 	 * used for holding the message received from the sender.
          */
-
+		
         /* TODO: Receive the file name using msgrcv() */
 	
 	/* TODO: return the received file name */
