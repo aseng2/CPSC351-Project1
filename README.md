@@ -23,8 +23,7 @@ Explanation of Sender and Receiver:
 
 4. Open the terminal and go to the directory where your sample files folder is located, then run the g++ command for sender.cpp and recv.cpp
 Command: **g++ sender -o sender sender.cpp** and **g++ -o recv recv.cpp**
-![image1](https://github.com/aseng2/CPSC351-Project1/assets/98761137/ce133958-999d-4583-ac3d-c41c3701723a)
-
+![image1](https://github.com/aseng2/CPSC351-Project1/assets/98761137/2df5208d-d78e-45f8-9254-8c823e7f02a7)
 
 
 Once you are done, go back to your folder, and it should have two program debugged names: sender and recv.
