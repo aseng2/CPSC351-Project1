@@ -22,6 +22,7 @@ Explanation of Sender and Receiver:
 
 4. Open the terminal and go to the directory where your sample files folder is located, then run the g++ command for sender.cpp and recv.cpp
 Command: **g++ sender -o sender sender.cpp** and **g++ -o recv recv.cpp**
+<img width="834" alt="_send and _recv in terminal (4)" src="https://github.com/aseng2/CPSC351-Project1/assets/98761137/6df4efe6-4cc3-4f75-b7ef-b54254084b02">
 
 
 
