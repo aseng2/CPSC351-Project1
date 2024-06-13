@@ -61,7 +61,7 @@ void init(int& shmid, int& msqid, void*& sharedMemPtr)
 	key_t key = ftok("keyfile.txt", 'a');
 	if (key == -1)
 	{
-		perror("Error opening file.(ftok)");
+		perror("ftok");
 		exit(1);
 	}
 
@@ -206,3 +206,4 @@ int main(int argc, char** argv)
 
 	return 0;
 }
+
