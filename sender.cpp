@@ -39,7 +39,7 @@ void init(int& shmid, int& msqid, void*& sharedMemPtr)
 	}
        
       /*get id of the shared memory segment */
-	shmid = shmget(key, SHARED_MEMORY_CHUNK_SIZE, 0655 | IPC_CREAT);
+	shmid = shmget(key, SHARED_MEMORY_CHUNK_SIZE, 0644 | IPC_CREAT);
 	if (shmid == -1) {
             perror("Error shmget");
             exit(1);
@@ -54,7 +54,7 @@ void init(int& shmid, int& msqid, void*& sharedMemPtr)
 
 
 	/*Get id of the message queue */
-	msqid = msgget(key, 0655 | IPC_CREAT);
+	msqid = msgget(key, 0644 | IPC_CREAT);
 	if (msqid == -1) {
 	    perror("Error msgget");
 	    exit(1);
