@@ -13,15 +13,14 @@ Explanation of Sender and Receiver:
 
 1. Make sure all the cpp files are in the same folder.
 <img width="728" alt="original folder after all command executed(5)" src="https://github.com/aseng2/CPSC351-Project1/assets/98761137/54a758ea-0496-4be1-b2a7-c14fdff69fc1">
-3. **Create a .txt file and name it testfile.txt or you can use keyfile.txt as well** (We decide to make a new file.)
 
 
+2. **Create a .txt file and name it testfile.txt or you can use keyfile.txt as well** (We decide to make a new file.)
+3. Write “this is test file.” into testfile.txt
+<img width="728" alt="testfile for _recv" src="https://github.com/aseng2/CPSC351-Project1/assets/98761137/3734f364-e191-4c08-9ff8-0a1829299a58">
 
 
-4. Write “this is test file.” into testfile.txt
-
-
-5. Open the terminal and go to the directory where your sample files folder is located, then run the g++ command for sender.cpp and recv.cpp
+4. Open the terminal and go to the directory where your sample files folder is located, then run the g++ command for sender.cpp and recv.cpp
 Command: **g++ sender -o sender sender.cpp** and **g++ -o recv recv.cpp**
 
 
