@@ -55,10 +55,13 @@ This show your program worked successfully.
 ## Contribution 
 Anthony Seng:
 Design Doc, recv.cpp and readme
+
 Sagarkumar Patel:
 sender.cpp and readme
+
 Edmarck Sosa Pineda:
 Debugging and code checking
+
 Afnan Al Salihi:
 Debugging and code checking
 
