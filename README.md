@@ -52,6 +52,15 @@ This show your program worked successfully.
 <img width="709" alt="HelloWorld-3" src="https://github.com/aseng2/CPSC351-Project1/assets/98761137/b016cf27-c174-4fa6-9152-f6b2bdeaec22">
 <img width="709" alt="HelloWorld-4" src="https://github.com/aseng2/CPSC351-Project1/assets/98761137/81213d95-d7f0-41c2-9b2a-b8af04ad93be">
 
+## Contribution 
+Anthony Seng:
+Design Doc, recv.cpp and readme
+Sagarkumar Patel:
+sender.cpp and readme
+Edmarck Sosa Pineda:
+Debugging and code checking
+Afnan Al Salihi:
+Debugging and code checking
 
 
 
