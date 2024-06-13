@@ -39,24 +39,24 @@ void init(int& shmid, int& msqid, void*& sharedMemPtr)
 	}
        
       /*get id of the shared memory segment */
-	shmid = shmget(key, SHARED_MEMORY_CHUNK_SIZE, 0644 | IPC_CREAT);
+	shmid = shmget(key, SHARED_MEMORY_CHUNK_SIZE, 0655 | IPC_CREAT);
 	if (shmid == -1) {
-            perror("shmget");
+            perror("Error shmget");
             exit(1);
 	}
 
 	/*Attach to the shared memory*/
  	sharedMemPtr = shmat(shmid, (void*)0, 0);
 	if (sharedMemPtr == (char*)(-1)) {
-	    perror("shmat");
+	    perror("Error shmat");
 	    exit(1);
 	}
 
 
 	/*Get id of the message queue */
-	msqid = msgget(key, 0644 | IPC_CREAT);
+	msqid = msgget(key, 0655 | IPC_CREAT);
 	if (msqid == -1) {
-	    perror("msgget");
+	    perror("Error msgget");
 	    exit(1);
 	}
 
@@ -72,19 +72,19 @@ void cleanUp(const int& shmid, const int& msqid, void* sharedMemPtr)
 {
 	/*detach from shared memory*/
 	if (shmdt(sharedMemPtr) == -1) {
-	    perror("shmdt");
+	    perror("Error shmdt");
 	    exit(1);
 	}
 
 	/*deallocate the shared memory segment*/
 	if (shmctl(shmid, IPC_RMID, NULL) == -1) {
-	    perror("shmctl");
+	    perror("Error shmctl");
 	    exit(1);
 	}
 
 	/*deallocate the message que */
 	if (msgctl(msqid, IPC_RMID, NULL) == -1) {
-	    perror("msgctl");
+	    perror("Error msgctl");
 	    exit(1);
 	}
 }
@@ -112,7 +112,7 @@ unsigned long sendFile(const char* fileName)
 	/* Was the file open? */
 	if(!fp)
 	{
-		perror("fopen");
+		perror("Error opening file.(fopen)");
 		exit(-1);
 	}
 	
@@ -126,7 +126,7 @@ unsigned long sendFile(const char* fileName)
  		 */
 		if((sndMsg.size = fread(sharedMemPtr, sizeof(char), SHARED_MEMORY_CHUNK_SIZE, fp)) < 0)
 		{
-			perror("fread");
+			perror("Errror reading memory.(fread)");
 			exit(-1);
 		}
 		
@@ -139,7 +139,7 @@ unsigned long sendFile(const char* fileName)
  		 */
 		sndMsg.mtype = SENDER_DATA_TYPE;
 		if (msgsnd(msqid, &sndMsg, sizeof(sndMsg) - sizeof(long), 0) == -1) {
-			perror("msgsnd");
+			perror("Error sending message.(msgsnd)");
 			exit(-1);
 		}
 
@@ -148,7 +148,7 @@ unsigned long sendFile(const char* fileName)
  	         * that he finished saving a chunk of memory. 
  		 */
 		if (msgrcv(msqid, &rcvMsg, sizeof(rcvMsg) - sizeof(long), RECV_DONE_TYPE, 0) == -1) {
-		    perror("msgrcv");
+		    perror("Error reciving message.(msgrcv)");
 		    exit(-1);
 		}
 
@@ -162,7 +162,7 @@ unsigned long sendFile(const char* fileName)
 	  */
 	sndMsg.size = 0;
 	if (msgsnd(msqid, &sndMsg, sizeof(sndMsg) - sizeof(long), 0) == -1) {
-	    perror("msgsnd");
+	    perror("Error sending message.(msgsnd)");
 	    exit(-1);
 	}
 
@@ -215,25 +215,26 @@ void sendFileName(const char* fileName)
 
 int main(int argc, char** argv)
 {
-	
+
 	/* Check the command line arguments */
 	if(argc < 2)
 	{
 		fprintf(stderr, "USAGE: %s <FILE NAME>\n", argv[0]);
 		exit(-1);
 	}
-		
+
 	/* Connect to shared memory and the message queue */
 	init(shmid, msqid, sharedMemPtr);
-	
+
+
 	/* Send the name of the file */
         sendFileName(argv[1]);
-		
+
 	/* Send the file */
 	fprintf(stderr, "The number of bytes sent is %lu\n", sendFile(argv[1]));
-	
+
 	/* Cleanup */
 	cleanUp(shmid, msqid, sharedMemPtr);
-		
+
 	return 0;
 }
