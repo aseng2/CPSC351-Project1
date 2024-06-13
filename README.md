@@ -12,7 +12,7 @@ Explanation of Sender and Receiver:
  ## How to run the program
 
 1. Make sure all the cpp files are in the same folder.
-<img width="728" alt="original folder after all command executed(5)" src="https://github.com/aseng2/CPSC351-Project1/assets/98761137/54a758ea-0496-4be1-b2a7-c14fdff69fc1">
+
 
 
 2. **Create a .txt file and name it testfile.txt or you can use keyfile.txt as well** (We decide to make a new file.)
@@ -22,7 +22,7 @@ Explanation of Sender and Receiver:
 
 4. Open the terminal and go to the directory where your sample files folder is located, then run the g++ command for sender.cpp and recv.cpp
 Command: **g++ sender -o sender sender.cpp** and **g++ -o recv recv.cpp**
-<img width="834" alt="_send and _recv in terminal (4)" src="https://github.com/aseng2/CPSC351-Project1/assets/98761137/6df4efe6-4cc3-4f75-b7ef-b54254084b02">
+
 
 
 
@@ -32,11 +32,12 @@ Once you are done, go back to your folder, and it should have two program debugg
 5. Open two terminals:
 6. First one for the sender, type: ./sender testfile.txt in terminal
 7. A second one for recv:, type: ./recv in terminal 
-
+<img width="834" alt="_send and _recv in terminal (4)" src="https://github.com/aseng2/CPSC351-Project1/assets/98761137/6df4efe6-4cc3-4f75-b7ef-b54254084b02">
 
 If the bytes number match in both terminals, the receiver got the file, so go back and check in your samplefiles folder.
 
 
+<img width="728" alt="original folder after all command executed(5)" src="https://github.com/aseng2/CPSC351-Project1/assets/98761137/54a758ea-0496-4be1-b2a7-c14fdff69fc1">
 Testfile.txt__recv shows that the file was received; open it, and it should say the same sentence as testfile.txt.
 
 
