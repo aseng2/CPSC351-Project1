@@ -16,7 +16,7 @@ Explanation of Sender and Receiver:
 
 
 2. **Create a .txt file and name it testfile.txt or you can use keyfile.txt as well** (We decide to make a new file.)
-3. Write “this is test file.” into testfile.txt
+3. Write “This is test file.” into testfile.txt
 <img width="705" alt="testfile for _send" src="https://github.com/aseng2/CPSC351-Project1/assets/98761137/48d3e66a-8629-4465-a578-554f427a3cd1">
 
 
@@ -31,7 +31,7 @@ Once you are done, go back to your folder, and it should have two program debugg
 
 5. Open two terminals:
 6. First one for the sender, type: ./sender testfile.txt in terminal
-7. A second one for recv:, type: ./recv in terminal 
+7. A second one for recv, type: ./recv in terminal 
 <img width="834" alt="_send and _recv in terminal (4)" src="https://github.com/aseng2/CPSC351-Project1/assets/98761137/6df4efe6-4cc3-4f75-b7ef-b54254084b02">
 
 If the bytes number match in both terminals, the receiver got the file, so go back and check in your samplefiles folder.
