@@ -12,12 +12,13 @@ Explanation of Sender and Receiver:
  ## How to run the program
 
 1. Make sure all the cpp files are in the same folder.
-
+<img width="736" alt="original folder after g++ command(3)" src="https://github.com/aseng2/CPSC351-Project1/assets/98761137/3164e085-f632-4f3c-a035-423ce7f67ebf">
 
 
 2. **Create a .txt file and name it testfile.txt or you can use keyfile.txt as well** (We decide to make a new file.)
 3. Write “this is test file.” into testfile.txt
-<img width="728" alt="testfile for _recv" src="https://github.com/aseng2/CPSC351-Project1/assets/98761137/3734f364-e191-4c08-9ff8-0a1829299a58">
+<img width="705" alt="testfile for _send" src="https://github.com/aseng2/CPSC351-Project1/assets/98761137/48d3e66a-8629-4465-a578-554f427a3cd1">
+
 
 
 4. Open the terminal and go to the directory where your sample files folder is located, then run the g++ command for sender.cpp and recv.cpp
@@ -38,8 +39,10 @@ If the bytes number match in both terminals, the receiver got the file, so go ba
 
 
 <img width="728" alt="original folder after all command executed(5)" src="https://github.com/aseng2/CPSC351-Project1/assets/98761137/54a758ea-0496-4be1-b2a7-c14fdff69fc1">
+
 Testfile.txt__recv shows that the file was received; open it, and it should say the same sentence as testfile.txt.
 
+<img width="728" alt="testfile for _recv" src="https://github.com/aseng2/CPSC351-Project1/assets/98761137/2b631f9a-cba9-4244-bf6a-0ee38334d38c">
 
 This show your program worked successfully. 
 
